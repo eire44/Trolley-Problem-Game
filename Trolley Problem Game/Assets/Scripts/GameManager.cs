@@ -17,9 +17,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject nextLevelScreen;
     public Button btnNextLevel;
+    public GameObject tooLateAlert;
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1.0f;
+
         Station_Controller[] stations = FindObjectsOfType<Station_Controller>();
         int index = Random.Range(0, stations.Length);
         stations[index].isGoal = true;
@@ -48,9 +51,10 @@ public class GameManager : MonoBehaviour
 
     public void openNextLevelScreen(bool trainCrashed)
     {
-        FindObjectOfType<Level_Completed_Controller>().sumAmounts(amountOfVictims, amountSaved);
+        Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
+        lvlC.sumAmounts(amountOfVictims, amountSaved);
 
-        if (trainCrashed)
+        if (trainCrashed || !lvlC.checkIfNextLevel())
         {
             btnNextLevel.interactable = false;
         } 
@@ -59,5 +63,20 @@ public class GameManager : MonoBehaviour
             btnNextLevel.interactable = true;
         }
         nextLevelScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void showTooLateAlert()
+    {
+        StartCoroutine(showAlert());
+    }
+
+    IEnumerator showAlert()
+    {
+        tooLateAlert.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        tooLateAlert.SetActive(false);
     }
 }

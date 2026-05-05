@@ -9,9 +9,12 @@ public class NodesPath_Intersections : NodesPath
     public List<IntersectionToVictim> intersectionToVictims = new List<IntersectionToVictim>();
     bool changeTrack = true;
     int amountSaved = 0;
+    GameManager gameManager;
     private void Start()
     {
         showSelectedTrail();
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public override NodesPath GetNextNode()
@@ -50,13 +53,14 @@ public class NodesPath_Intersections : NodesPath
 
     void OnMouseDown()
     {
-        Debug.Log("PRESSED");
         if(changeTrack)
         {
             ToggleDirection();
         }
-
-        //it could have an alert text saying it´s too late
+        else
+        {
+            gameManager.showTooLateAlert();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,7 +68,7 @@ public class NodesPath_Intersections : NodesPath
         if(collision.gameObject.CompareTag("Player"))
         {
             changeTrack = false;
-            FindObjectOfType<GameManager>().addToSavedCount(amountSaved);
+            gameManager.addToSavedCount(amountSaved);
 
             SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
 

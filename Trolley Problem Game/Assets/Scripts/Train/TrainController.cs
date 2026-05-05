@@ -9,7 +9,6 @@ public class TrainController : MonoBehaviour
     private NodesPath targetNode; 
 
     public float speed = 2f;
-    private float t = 0f;
     GameManager gameManager;
 
     void Start()
@@ -22,18 +21,12 @@ public class TrainController : MonoBehaviour
     {
         if (targetNode == null) return;
 
-        t += Time.deltaTime * speed;
-        transform.position = Vector3.Lerp(currentNode.transform.position, targetNode.transform.position, t);
+        transform.position = Vector3.MoveTowards(transform.position, targetNode.transform.position, speed * Time.deltaTime);
 
-        //Vector3 direction = (targetNode.transform.position - currentNode.transform.position).normalized;
-        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        if (t >= 1f)
+        if (Vector3.Distance(transform.position, targetNode.transform.position) < 0.01f)
         {
             currentNode = targetNode;
             targetNode = currentNode.GetNextNode();
-            t = 0f;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,7 +47,6 @@ public class TrainController : MonoBehaviour
             if (station != null && station.isGoal) //station.name == gameManager.destinyName
             {
                 gameManager.openNextLevelScreen(false);
-                Debug.Log("NEXT LEVEL");
             }
         }
     }
