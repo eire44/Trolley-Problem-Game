@@ -38,15 +38,23 @@ public class TrainController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            //GAME OVER
+            gameManager.openNextLevelScreen(true, "You crashed");
             Debug.Log("GAME OVER");
         }
         else if (collision.gameObject.CompareTag("Station"))
         {
             Station_Controller station = collision.gameObject.GetComponent<Station_Controller>();
-            if (station != null && station.isGoal) //station.name == gameManager.destinyName
+            if (station != null) //station.name == gameManager.destinyName
             {
-                gameManager.openNextLevelScreen(false);
+                if(station.isGoal)
+                {
+                    gameManager.openNextLevelScreen(false, "Level Completed");
+                }
+                else
+                {
+                    gameManager.openNextLevelScreen(true, "");
+                }
+                
             }
         }
     }

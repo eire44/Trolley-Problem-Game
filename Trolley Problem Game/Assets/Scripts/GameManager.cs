@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         savedCount.text = "Saved: " + amountSaved.ToString();
     }
 
-    public void openNextLevelScreen(bool trainCrashed)
+    public void openNextLevelScreen(bool trainCrashed, string title)
     {
         Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
         lvlC.sumAmounts(amountOfVictims, amountSaved);

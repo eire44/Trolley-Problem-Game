@@ -8024,7 +8024,7 @@ MonoBehaviour:
   destinyName: 
   nextLevelScreen: {fileID: 462017933}
   btnNextLevel: {fileID: 1784997359}
-  tooLateAlert: {fileID: 0}
+  tooLateAlert: {fileID: 1929035500}
 --- !u!4 &2010406325
 Transform:
   m_ObjectHideFlags: 0
