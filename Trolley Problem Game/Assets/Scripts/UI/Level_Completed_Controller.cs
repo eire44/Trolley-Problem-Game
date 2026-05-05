@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
+
+public class Level_Completed_Controller : MonoBehaviour
+{
+    Scene currentScene;
+    int totalVictims = 0;
+    int totalSaved = 0;
+
+    public TMP_Text txtVictims;
+    public TMP_Text txtSaved;
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentScene = SceneManager.GetActiveScene();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void sumAmounts(int victims, int saved)
+    {
+        totalVictims += victims;
+        totalSaved += saved;
+
+        txtVictims.text = "Total Victims: " + totalVictims;
+        txtSaved.text = "Total Saved: " + totalSaved;
+    }
+
+    public void backToMainMenu()
+    {
+        ///audioSource_Click.Play();
+        SceneManager.LoadScene(0);
+    }
+
+    public void tryAgain()
+    {
+        ///audioSource_Click.Play();
+        SceneManager.LoadScene(currentScene.buildIndex);
+    }
+
+    public void goToNextLevel()
+    {
+        ///audioSource_Click.Play();
+        SceneManager.LoadScene(currentScene.buildIndex + 1);
+    }
+}

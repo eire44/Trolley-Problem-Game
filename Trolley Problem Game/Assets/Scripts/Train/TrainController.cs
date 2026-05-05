@@ -51,9 +51,9 @@ public class TrainController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Station"))
         {
             Station_Controller station = collision.gameObject.GetComponent<Station_Controller>();
-            if (station.name == gameManager.destinyName)
+            if (station != null && station.isGoal) //station.name == gameManager.destinyName
             {
-                //siguiente nivel
+                gameManager.openNextLevelScreen(false);
                 Debug.Log("NEXT LEVEL");
             }
         }

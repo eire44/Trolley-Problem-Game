@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class GameManager : MonoBehaviour
     int amountOfVictims = 0;
     int amountSaved = 0;
     [HideInInspector] public string destinyName = "";
+
+    public GameObject nextLevelScreen;
+    public Button btnNextLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +46,18 @@ public class GameManager : MonoBehaviour
         savedCount.text = "Saved: " + amountSaved.ToString();
     }
 
-    void CheckStation(NodesPath node)
+    public void openNextLevelScreen(bool trainCrashed)
     {
-        Station_Controller station = node.GetComponent<Station_Controller>();
-        if (station != null && station.isGoal)
+        FindObjectOfType<Level_Completed_Controller>().sumAmounts(amountOfVictims, amountSaved);
+
+        if (trainCrashed)
         {
-            //que presione stop train
-            Debug.Log("Ganaste");
+            btnNextLevel.interactable = false;
+        } 
+        else
+        {
+            btnNextLevel.interactable = true;
         }
+        nextLevelScreen.SetActive(true);
     }
 }
