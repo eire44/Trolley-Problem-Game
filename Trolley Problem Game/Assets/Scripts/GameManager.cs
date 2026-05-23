@@ -13,31 +13,26 @@ public class GameManager : MonoBehaviour
     public TMP_Text savedCount;
     int amountOfVictims = 0;
     int amountSaved = 0;
-    [HideInInspector] public string destinyName = "";
+    [HideInInspector] public string destinationName = "";
 
     public GameObject nextLevelScreen;
     public Button btnNextLevel;
     public GameObject tooLateAlert;
 
-    //public int currentOriginID = 0;
-    //[HideInInspector] public string currentDirection = "e";
-    // Start is called before the first frame update
+    [HideInInspector] public NodesPath currentNode;
+    public int levelNumber;
     void Start()
     {
-        Time.timeScale = 1.0f;
+        Time.timeScale = 0f;
 
         Station_Controller[] stations = FindObjectsOfType<Station_Controller>();
         int index = Random.Range(0, stations.Length);
         stations[index].isGoal = true;
-        destinyName = stations[index].stationName;
+        destinationName = stations[index].stationName;
 
-        stationName.text = "Next Station is: " + destinyName;
-    }
+        stationName.text = "Next Station is: " + destinationName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        FindObjectOfType<Level_StartScreen>().setLevelScreen(levelNumber, destinationName);
     }
 
     public void addToVictimsCount()
