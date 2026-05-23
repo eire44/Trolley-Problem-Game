@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public GameObject nextLevelScreen;
     public Button btnNextLevel;
     public GameObject tooLateAlert;
+
+    //public int currentOriginID = 0;
+    //[HideInInspector] public string currentDirection = "e";
     // Start is called before the first frame update
     void Start()
     {

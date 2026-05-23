@@ -52,7 +52,7 @@ public class TrainController : MonoBehaviour
                 }
                 else
                 {
-                    gameManager.openNextLevelScreen(true, "");
+                    gameManager.openNextLevelScreen(true, "Wrong station!!");
                 }
                 
             }
