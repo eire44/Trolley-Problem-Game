@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     {
         Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
         lvlC.sumAmounts(amountOfVictims, amountSaved);
+        lvlC.setFinalMessage();
 
         if (trainCrashed || !lvlC.checkIfNextLevel())
         {

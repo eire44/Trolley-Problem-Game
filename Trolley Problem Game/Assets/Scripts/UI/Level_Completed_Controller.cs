@@ -12,8 +12,10 @@ public class Level_Completed_Controller : MonoBehaviour
 
     public TMP_Text txtVictims;
     public TMP_Text txtSaved;
+    public TMP_Text finalMessage;
 
     public GameObject pauseMenu;
+    public Messages_Controller messages_Controller;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,11 @@ public class Level_Completed_Controller : MonoBehaviour
         {
             pauseMenuController();
         }
+    }
+
+    public void setFinalMessage()
+    {
+        finalMessage.text = messages_Controller.finalMessage;
     }
 
     public void sumAmounts(int victims, int saved)
