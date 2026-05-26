@@ -12,13 +12,15 @@ public class Messages_Controller : MonoBehaviour
 
     public string finalMessage = "";
     GameManager gameManager;
+    Level_Completed_Controller level_Completed_Controller;
 
     static bool killedTooManyPeople = false;
+    static bool killedTheDoctors = false;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-
+        level_Completed_Controller = FindObjectOfType<Level_Completed_Controller>();
     }
 
     // Update is called once per frame
@@ -41,11 +43,18 @@ public class Messages_Controller : MonoBehaviour
             }
         } else if(levelIndex == 4)
         {
-            return null; //FALTAN LOS START MESSAGE DEL 4 Y DEL 5
+            if(killedTheDoctors)
+            {
+                return "I’m not forgetting that you killed the doctors last time";
+            }
+            else
+            {
+                return "It would be great for my research if you actually used critical thinking when deciding";
+            }
         }
         else
         {
-            return null;
+            return "";
         }
         
     }
@@ -59,8 +68,8 @@ public class Messages_Controller : MonoBehaviour
             case 2:
                 checkLevel2Condition();
                 break;
-            case 5:
-
+            case 4:
+                checkLevel4Condition();
                 break;
             default:
                 break;
@@ -89,6 +98,28 @@ public class Messages_Controller : MonoBehaviour
         {
             finalMessage = "You seem to like massacres. Let’s see what you do next.";
             killedTooManyPeople = true;
+        }
+        level_Completed_Controller.finalMessage.text = finalMessage;
+    }
+
+    void checkLevel4Condition()
+    {
+        if (gameManager.destinationName == "Corn St")
+        {
+            if (FindObjectOfType<lvl4_checkDoctors>().checkIfDoctorsKilled())
+            {
+                killedTheDoctors = true;
+                finalMessage = "You went for the two doctors? Do you hate humanity?";
+                level_Completed_Controller.finalMessage.text = finalMessage;
+            }
+            else
+            {
+                killedTheDoctors = false;
+            }
+        }
+        else
+        {
+            killedTheDoctors = false;
         }
     }
 }

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
         stationName.text = "Next Station is: " + destinationName;
 
-        if(FindObjectOfType<Messages_Controller>().checkForStartMessage(levelNumber) != null)
+        if(FindObjectOfType<Messages_Controller>().checkForStartMessage(levelNumber) != "")
         {
             stations[index].levelStartMessage = FindObjectOfType<Messages_Controller>().checkForStartMessage(levelNumber);
         }
@@ -48,11 +48,20 @@ public class GameManager : MonoBehaviour
         crashMessage.Add("I told you not to crash. Make sure you´re heading to the right station and through the right tracks.");
         crashMessage.Add("If you´re trying to suicide, this is not the game. Look up for Human: Fall Flat");
         crashMessage.Add("Well, this is getting annoying");
+        crashMessage.Add("Stop. Crashing. Get. To the right. Station.");
     }
 
-    public void addToVictimsCount()
+    public void addToVictimsCount(bool doubleVictim)
     {
-        amountOfVictims++;
+        if(doubleVictim)
+        {
+            amountOfVictims += 2;
+        }
+        else
+        {
+            amountOfVictims++;
+        }
+        
         victimsCount.text = "Killed: " + amountOfVictims.ToString();
     }
 
@@ -64,23 +73,29 @@ public class GameManager : MonoBehaviour
 
     public void openNextLevelScreen(bool trainCrashed, string title)
     {
-        Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
-        lvlC.sumAmounts(amountOfVictims, amountSaved);
-        finalScreenTitle.text = title;
-
         if (trainCrashed || !lvlC.checkIfNextLevel())
         {
             btnNextLevel.interactable = false;
+            amountOfVictims += FindObjectOfType<TrainController>().passengersAmount;
         } 
         else
         {
             btnNextLevel.interactable = true;
         }
 
+        Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
+        lvlC.sumAmounts(amountOfVictims, amountSaved);
+        finalScreenTitle.text = title;
+
+
         if (trainCrashed)
         {
             lvlC.finalMessage.text = crashMessage[crashIndex];
-            crashIndex++;
+            if(crashMessage[crashIndex + 1] != null)
+            {
+                crashIndex++;
+            }
+            
         } else
         {
             lvlC.setFinalMessage();

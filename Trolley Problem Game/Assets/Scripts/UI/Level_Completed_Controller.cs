@@ -7,8 +7,8 @@ using TMPro;
 public class Level_Completed_Controller : MonoBehaviour
 {
     Scene currentScene;
-    int totalVictims = 0;
-    int totalSaved = 0;
+    static int totalVictims = 0;
+    static int totalSaved = 0;
 
     public TMP_Text txtVictims;
     public TMP_Text txtSaved;
@@ -16,6 +16,7 @@ public class Level_Completed_Controller : MonoBehaviour
 
     public GameObject pauseMenu;
     Messages_Controller messages_Controller;
+    //SaveSystem saveSystem;
 
     //static bool firstRound = true;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class Level_Completed_Controller : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         messages_Controller = FindObjectOfType<Messages_Controller>();
+        //saveSystem = FindObjectOfType<SaveSystem>();
     }
 
     // Update is called once per frame
@@ -36,8 +38,8 @@ public class Level_Completed_Controller : MonoBehaviour
 
     public void setFinalMessage()
     {
-        messages_Controller.checkForFinalMessage();
         finalMessage.text = messages_Controller.finalMessage;
+        messages_Controller.checkForFinalMessage();
     }
 
     public void sumAmounts(int victims, int saved)

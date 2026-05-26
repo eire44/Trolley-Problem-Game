@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Station
   - Intersection
+  - Double Victim
   layers:
   - Default
   - TransparentFX

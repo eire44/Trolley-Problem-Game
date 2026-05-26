@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 144797964}
   m_Layer: 0
   m_Name: Victim
-  m_TagString: Victim
+  m_TagString: Double Victim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGoal: 0
   stationName: Wolves St
-  levelStartMessage: 
+  levelStartMessage: Do you have pets?
 --- !u!61 &327927822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2209,7 +2209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d80938383717f4eac0d60b0b09f0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victimsMessage: You went for a doctor? Do you hate humanity?
+  victimsMessage: "You killed the last doctor but not the first one? I\u2019ll just
+    note that you like to go against the norm"
 --- !u!1 &342394903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,7 +2716,7 @@ Transform:
   m_GameObject: {fileID: 365164665}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3592001, y: 0.87, z: 0}
+  m_LocalPosition: {x: -0.014751419, y: -0.38549995, z: 0}
   m_LocalScale: {x: 0.25873592, y: 0.25873592, z: 0.25873592}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3766,6 +3767,7 @@ RectTransform:
   - {fileID: 2029069575}
   - {fileID: 1941965987}
   - {fileID: 1929035501}
+  - {fileID: 652900317}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3800,7 +3802,7 @@ Transform:
   m_GameObject: {fileID: 512598530}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4544487, y: -1.5155, z: 0}
+  m_LocalPosition: {x: 0.11, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3842,7 +3844,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4655974, y: 0.24611393}
+  m_Offset: {x: -0.02269876, y: -0.051435888}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3853,7 +3855,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2199931, y: 0.6093386}
+  m_Size: {x: 0.6986253, y: 1.1285263}
   m_EdgeRadius: 0
 --- !u!114 &512598533
 MonoBehaviour:
@@ -6230,7 +6232,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 624432087, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6242,6 +6244,119 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &652900316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 509686859}
+    m_Modifications:
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201464066786834768, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_Name
+      value: PassengersAmount
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+--- !u!224 &652900317 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+  m_PrefabInstance: {fileID: 652900316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &652900318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9167629876316300160, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+  m_PrefabInstance: {fileID: 652900316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &653655549
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,6 +6461,7 @@ GameObject:
   - component: {fileID: 677389355}
   - component: {fileID: 677389357}
   - component: {fileID: 677389358}
+  - component: {fileID: 677389359}
   m_Layer: 0
   m_Name: UI Controller
   m_TagString: Untagged
@@ -6415,6 +6531,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelMessages: []
   finalMessage: 
+--- !u!114 &677389359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677389354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b977ea45f4f178c439b033817ea29159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doctorsArray:
+  - {fileID: 342256908}
+  - {fileID: 1840919850}
 --- !u!1 &698280995
 GameObject:
   m_ObjectHideFlags: 0
@@ -7313,7 +7444,7 @@ Transform:
   m_GameObject: {fileID: 901635801}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3592001, y: 1.5491502, z: 0}
+  m_LocalPosition: {x: -0.014751419, y: 0.29365027, z: 0}
   m_LocalScale: {x: 0.25873592, y: 0.25873592, z: 0.25873592}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8001,7 +8132,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1948954513, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9028,7 +9159,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 218680997, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9683,11 +9814,11 @@ MonoBehaviour:
   selectedIndex: 0
   intersectionToVictims:
   - trailID: 0
-    nextNode: {fileID: 512598533}
+    nextNode: {fileID: 26656950}
     trailOption: {fileID: 1596057928}
     trackVictims: 0
   - trailID: 1
-    nextNode: {fileID: 331073903}
+    nextNode: {fileID: 512598533}
     trailOption: {fileID: 1756115307}
     trackVictims: 0
 --- !u!61 &1389367811
@@ -9921,7 +10052,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGoal: 0
   stationName: Corn St
-  levelStartMessage: 
+  levelStartMessage: Between a cop and a doctor, 74% of people choose to save the
+    doctor
 --- !u!61 &1399584505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10694,7 +10826,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1948954513, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10868,7 +11000,7 @@ Transform:
   m_GameObject: {fileID: 1582407455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.342, y: 1.287, z: 0}
+  m_LocalPosition: {x: 0.002448693, y: 0.031499982, z: 0}
   m_LocalScale: {x: 0.007857652, y: 0.007857652, z: 0.007857652}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10975,6 +11107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentNode: {fileID: 1544512313}
   speed: 1
+  trainPassengers: 0
+  passengersAmount: {fileID: 652900318}
 --- !u!61 &1589565670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11290,7 +11424,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1948954513, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11914,7 +12048,7 @@ Transform:
   m_GameObject: {fileID: 1686054714}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3592001, y: 1.2601302, z: 0}
+  m_LocalPosition: {x: -0.014751419, y: 0.004630208, z: 0}
   m_LocalScale: {x: 0.25873592, y: 0.25873592, z: 0.25873592}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12277,8 +12411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d80938383717f4eac0d60b0b09f0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victimsMessage: "You went for the cop? No wonder you\xB4re playing a game about
-    killing people"
+  victimsMessage: You went for the cop? Genuinely? Or do you just lack independent
+    thinking?
 --- !u!1 &1781301312
 GameObject:
   m_ObjectHideFlags: 0
@@ -12312,7 +12446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGoal: 0
   stationName: Constitution
-  levelStartMessage: 
+  levelStartMessage: "I\u2019m just trying to understand why you do what you do"
 --- !u!61 &1781301314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12730,6 +12864,7 @@ GameObject:
   - component: {fileID: 1840919851}
   - component: {fileID: 1840919853}
   - component: {fileID: 1840919852}
+  - component: {fileID: 1840919854}
   m_Layer: 0
   m_Name: Victim
   m_TagString: Victim
@@ -12849,6 +12984,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1840919854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840919850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d80938383717f4eac0d60b0b09f0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victimsMessage: Doctor
 --- !u!1 &1919119969
 GameObject:
   m_ObjectHideFlags: 0

@@ -799,7 +799,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1948954513, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1666,7 +1666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGoal: 0
   stationName: Wolves St
-  levelStartMessage: 
+  levelStartMessage: "What can I say? Have fun. It\u2019s not like the people you
+    kill can come back and complain"
 --- !u!61 &327927822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3247,7 +3248,7 @@ GameObject:
   - component: {fileID: 476635608}
   m_Layer: 0
   m_Name: Victim (7)
-  m_TagString: Victim
+  m_TagString: Double Victim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3871,6 +3872,7 @@ RectTransform:
   - {fileID: 1822885955}
   - {fileID: 1941965987}
   - {fileID: 1929035501}
+  - {fileID: 2093838069}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8305,7 +8307,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1948954513, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10299,7 +10301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGoal: 0
   stationName: Corn St
-  levelStartMessage: 
+  levelStartMessage: It would be great for my research if you actually used critical
+    thinking when deciding
 --- !u!61 &1399584505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11353,6 +11356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentNode: {fileID: 1544512313}
   speed: 1
+  trainPassengers: 0
+  passengersAmount: {fileID: 2093838070}
 --- !u!61 &1589565670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12507,7 +12512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGoal: 0
   stationName: Constitution
-  levelStartMessage: 
+  levelStartMessage: "I\xB4m a dogs person by the way"
 --- !u!61 &1781301314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13025,6 +13030,7 @@ GameObject:
   - component: {fileID: 1840919851}
   - component: {fileID: 1840919853}
   - component: {fileID: 1840919852}
+  - component: {fileID: 1840919854}
   m_Layer: 0
   m_Name: Victim
   m_TagString: Victim
@@ -13144,6 +13150,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1840919854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840919850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d80938383717f4eac0d60b0b09f0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victimsMessage: YOU KILLED THE DOG!!!!! I didnt want you to do that
 --- !u!1 &1912504221
 GameObject:
   m_ObjectHideFlags: 0
@@ -14212,7 +14231,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1948954513, guid: 009a6b6475c86124d93614cf9b873779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14308,6 +14327,119 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2093838068
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 509686859}
+    m_Modifications:
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201464066786834768, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+      propertyPath: m_Name
+      value: PassengersAmount
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+--- !u!224 &2093838069 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1178426007254411538, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+  m_PrefabInstance: {fileID: 2093838068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2093838070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9167629876316300160, guid: fe7d672d7e3f4d943be153df8fe8d9d7, type: 3}
+  m_PrefabInstance: {fileID: 2093838068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2131163241
 GameObject:
   m_ObjectHideFlags: 0
@@ -14322,7 +14454,7 @@ GameObject:
   - component: {fileID: 2131163245}
   m_Layer: 0
   m_Name: Victim (8)
-  m_TagString: Victim
+  m_TagString: Double Victim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14451,7 +14583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d80938383717f4eac0d60b0b09f0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victimsMessage: Really? Have you ever considered another job?
+  victimsMessage: "I\xB4ve seen enough. You should get another job."
 --- !u!1 &2144928541
 GameObject:
   m_ObjectHideFlags: 0

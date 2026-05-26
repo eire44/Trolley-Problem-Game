@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using TMPro;
 
 public class TrainController : MonoBehaviour
 {
@@ -11,10 +12,16 @@ public class TrainController : MonoBehaviour
     public float speed = 2f;
     GameManager gameManager;
 
+    [HideInInspector] public int trainPassengers = 0;
+    public TMP_Text passengersAmount;
+
     void Start()
     {
         targetNode = currentNode.GetNextNode();
         gameManager = FindObjectOfType<GameManager>();
+
+        trainPassengers = Random.Range(3, 10);
+        passengersAmount.text = "Passengers amount: " + trainPassengers;
     }
 
     void Update()
@@ -33,13 +40,16 @@ public class TrainController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Victim"))
         {
-            gameManager.addToVictimsCount();
+            gameManager.addToVictimsCount(false);
+            collision.gameObject.SetActive(false);
+        } else if (collision.gameObject.CompareTag("Double Victim"))
+        {
+            gameManager.addToVictimsCount(true);
             collision.gameObject.SetActive(false);
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameManager.openNextLevelScreen(true, "You crashed");
-            Debug.Log("GAME OVER");
         }
         else if (collision.gameObject.CompareTag("Station"))
         {
