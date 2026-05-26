@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,10 +38,18 @@ public class GameManager : MonoBehaviour
 
         stationName.text = "Next Station is: " + destinationName;
 
-        if(FindObjectOfType<Messages_Controller>().checkForStartMessage(levelNumber) != "")
+        Messages_Controller messages_Controller = FindObjectOfType<Messages_Controller>();
+
+        if (messages_Controller.checkForStartMessage(levelNumber) != "")
         {
-            stations[index].levelStartMessage = FindObjectOfType<Messages_Controller>().checkForStartMessage(levelNumber);
+            stations[index].levelStartMessage = messages_Controller.checkForStartMessage(levelNumber);
         }
+
+        if(stations[index].GetComponent<stations_EndMessage>() != null)
+        {
+            messages_Controller.endGameMessage = stations[index].GetComponent<stations_EndMessage>().endGameMessage;
+        }
+        
 
         FindObjectOfType<Level_StartScreen>().setLevelScreen(levelNumber, destinationName, stations[index].levelStartMessage);
 
@@ -73,17 +82,18 @@ public class GameManager : MonoBehaviour
 
     public void openNextLevelScreen(bool trainCrashed, string title)
     {
-        if (trainCrashed || !lvlC.checkIfNextLevel())
+        Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
+
+        if (trainCrashed) // || !lvlC.checkIfNextLevel()
         {
             btnNextLevel.interactable = false;
-            amountOfVictims += FindObjectOfType<TrainController>().passengersAmount;
+            amountOfVictims += FindObjectOfType<TrainController>().trainPassengers;
         } 
         else
         {
             btnNextLevel.interactable = true;
         }
 
-        Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
         lvlC.sumAmounts(amountOfVictims, amountSaved);
         finalScreenTitle.text = title;
 

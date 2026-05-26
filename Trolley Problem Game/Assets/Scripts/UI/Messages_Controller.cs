@@ -16,6 +16,8 @@ public class Messages_Controller : MonoBehaviour
 
     static bool killedTooManyPeople = false;
     static bool killedTheDoctors = false;
+
+    [HideInInspector] public string endGameMessage = "";
     // Start is called before the first frame update
     void Start()
     {

@@ -69,7 +69,19 @@ public class Level_Completed_Controller : MonoBehaviour
         ///audioSource_Click.Play();
         if (checkIfNextLevel())
         {
-            SceneManager.LoadScene(currentScene.buildIndex + 1);
+            if(totalVictims < 50)
+            {
+                SceneManager.LoadScene(currentScene.buildIndex + 1);
+            }
+            else
+            {
+                messages_Controller.endGameMessage = "You killed 50 people already, people are starting to suspect you’re doing this on purpose. I´ll look for another driver.";
+                FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
+            }
+        }
+        else
+        {
+            FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
         }
     }
 

@@ -1645,6 +1645,7 @@ GameObject:
   - component: {fileID: 327927823}
   - component: {fileID: 327927822}
   - component: {fileID: 327927821}
+  - component: {fileID: 327927825}
   m_Layer: 0
   m_Name: Station (2)
   m_TagString: Station
@@ -1781,6 +1782,20 @@ Transform:
   - {fileID: 1591052857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &327927825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327927820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b96643b43a1ad4d887f4f2f2fa7134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameMessage: ' You''ve been accused by the victims'' families, and the evaluation
+    driver testified about his notes on your decisions. You are going to jail.'
 --- !u!1 &331073901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,6 +3885,7 @@ RectTransform:
   - {fileID: 720738627}
   - {fileID: 485115075}
   - {fileID: 1822885955}
+  - {fileID: 579994880}
   - {fileID: 1941965987}
   - {fileID: 1929035501}
   - {fileID: 2093838069}
@@ -6207,6 +6223,132 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextNode: {fileID: 1933526797}
   selectedIndex: 0
+--- !u!1001 &579994878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 509686859}
+    m_Modifications:
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163430432873941662, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_Name
+      value: EndGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499713697588656156, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 677389355}
+    - target: {fileID: 7499713697588656156, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: backToMainMenu
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+--- !u!114 &579994879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4011225039413223635, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+  m_PrefabInstance: {fileID: 579994878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &579994880 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1884267985680469452, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+  m_PrefabInstance: {fileID: 579994878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &579994881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5163430432873941662, guid: 354ec2875a2451748ab0eb293cfdc5f1, type: 3}
+  m_PrefabInstance: {fileID: 579994878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &589467208
 GameObject:
   m_ObjectHideFlags: 0
@@ -6744,6 +6886,7 @@ GameObject:
   - component: {fileID: 677389355}
   - component: {fileID: 677389357}
   - component: {fileID: 677389358}
+  - component: {fileID: 677389359}
   m_Layer: 0
   m_Name: UI Controller
   m_TagString: Untagged
@@ -6813,6 +6956,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelMessages: []
   finalMessage: 
+  endGameMessage: 
+--- !u!114 &677389359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677389354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ce6855c2c09fa48ab2216e9040dfe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameScreen: {fileID: 579994881}
+  endGameMessage: {fileID: 579994879}
 --- !u!1 &720738626
 GameObject:
   m_ObjectHideFlags: 0
@@ -10280,6 +10438,7 @@ GameObject:
   - component: {fileID: 1399584506}
   - component: {fileID: 1399584505}
   - component: {fileID: 1399584504}
+  - component: {fileID: 1399584508}
   m_Layer: 0
   m_Name: Station (1)
   m_TagString: Station
@@ -10416,6 +10575,19 @@ Transform:
   - {fileID: 355503708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1399584508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399584503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b96643b43a1ad4d887f4f2f2fa7134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameMessage: The evaluator deemed you no longer useful and accused you of genocide.
 --- !u!1 &1426190737
 GameObject:
   m_ObjectHideFlags: 0
@@ -12491,6 +12663,7 @@ GameObject:
   - component: {fileID: 1781301315}
   - component: {fileID: 1781301314}
   - component: {fileID: 1781301313}
+  - component: {fileID: 1781301317}
   m_Layer: 0
   m_Name: Station (1)
   m_TagString: Station
@@ -12626,6 +12799,20 @@ Transform:
   - {fileID: 365508876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1781301317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781301312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b96643b43a1ad4d887f4f2f2fa7134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameMessage: The driver of the evaluation has criminally charged you with animal
+    abuse.
 --- !u!1 &1814210533
 GameObject:
   m_ObjectHideFlags: 0
