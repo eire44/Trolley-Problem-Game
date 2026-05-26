@@ -11,11 +11,14 @@ public class Level_StartScreen : MonoBehaviour
     public TMP_Text levelNumber;
     public TMP_Text destination;
     public Button btnPreviousLevel;
+    public TMP_Text startMessage;
 
     GameManager gameManager;
+    Messages_Controller msgController;
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        msgController = FindObjectOfType<Messages_Controller>();
 
         btnPreviousLevel.interactable = gameManager.levelNumber > 1;
         
@@ -24,13 +27,19 @@ public class Level_StartScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void setLevelScreen(int levelIndex, string stationName)
+    //public void setStartMessage()
+    //{
+    //    startMessage.text = msgController.finalMessage;
+    //}
+
+    public void setLevelScreen(int levelIndex, string stationName, string message)
     {
         levelNumber.text = "Level " + levelIndex.ToString();
         destination.text = "Destination: " + stationName;
+        startMessage.text = message;
     }
 
     public void startLevel()

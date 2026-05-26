@@ -6,4 +6,5 @@ public class Station_Controller : MonoBehaviour
 {
     [HideInInspector] public bool isGoal = false;
     public string stationName = "";
+    public string levelStartMessage = "";
 }

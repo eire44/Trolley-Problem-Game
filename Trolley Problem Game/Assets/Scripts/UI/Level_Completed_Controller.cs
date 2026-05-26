@@ -15,11 +15,14 @@ public class Level_Completed_Controller : MonoBehaviour
     public TMP_Text finalMessage;
 
     public GameObject pauseMenu;
-    public Messages_Controller messages_Controller;
+    Messages_Controller messages_Controller;
+
+    //static bool firstRound = true;
     // Start is called before the first frame update
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
+        messages_Controller = FindObjectOfType<Messages_Controller>();
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class Level_Completed_Controller : MonoBehaviour
 
     public void setFinalMessage()
     {
+        messages_Controller.checkForFinalMessage();
         finalMessage.text = messages_Controller.finalMessage;
     }
 
@@ -54,6 +58,7 @@ public class Level_Completed_Controller : MonoBehaviour
     public void tryAgain()
     {
         ///audioSource_Click.Play();
+        //firstRound = false;
         SceneManager.LoadScene(currentScene.buildIndex);
     }
 

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text stationName;
     public TMP_Text victimsCount;
     public TMP_Text savedCount;
-    int amountOfVictims = 0;
+    [HideInInspector] public int amountOfVictims = 0;
     int amountSaved = 0;
     [HideInInspector] public string destinationName = "";
 
@@ -19,8 +19,13 @@ public class GameManager : MonoBehaviour
     public Button btnNextLevel;
     public GameObject tooLateAlert;
 
+    public TMP_Text finalScreenTitle;
+
     [HideInInspector] public NodesPath currentNode;
     public int levelNumber;
+
+    List<string> crashMessage = new List<string>();
+    static int crashIndex = 0;
     void Start()
     {
         Time.timeScale = 0f;
@@ -32,7 +37,17 @@ public class GameManager : MonoBehaviour
 
         stationName.text = "Next Station is: " + destinationName;
 
-        FindObjectOfType<Level_StartScreen>().setLevelScreen(levelNumber, destinationName);
+        if(FindObjectOfType<Messages_Controller>().checkForStartMessage(levelNumber) != null)
+        {
+            stations[index].levelStartMessage = FindObjectOfType<Messages_Controller>().checkForStartMessage(levelNumber);
+        }
+
+        FindObjectOfType<Level_StartScreen>().setLevelScreen(levelNumber, destinationName, stations[index].levelStartMessage);
+
+        crashMessage.Add("Try not to crash, okay? Make it to the right station, the train won´t stop at the wrong one.");
+        crashMessage.Add("I told you not to crash. Make sure you´re heading to the right station and through the right tracks.");
+        crashMessage.Add("If you´re trying to suicide, this is not the game. Look up for Human: Fall Flat");
+        crashMessage.Add("Well, this is getting annoying");
     }
 
     public void addToVictimsCount()
@@ -51,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
         lvlC.sumAmounts(amountOfVictims, amountSaved);
-        lvlC.setFinalMessage();
+        finalScreenTitle.text = title;
 
         if (trainCrashed || !lvlC.checkIfNextLevel())
         {
@@ -61,6 +76,16 @@ public class GameManager : MonoBehaviour
         {
             btnNextLevel.interactable = true;
         }
+
+        if (trainCrashed)
+        {
+            lvlC.finalMessage.text = crashMessage[crashIndex];
+            crashIndex++;
+        } else
+        {
+            lvlC.setFinalMessage();
+        }
+
         nextLevelScreen.SetActive(true);
         Time.timeScale = 0f;
     }
