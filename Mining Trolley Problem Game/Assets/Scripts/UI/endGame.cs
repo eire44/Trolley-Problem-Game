@@ -12,6 +12,7 @@ public class endGame : MonoBehaviour
     {
         Time.timeScale = 0f;
         endGameScreen.SetActive(true);
+        FindObjectOfType<GameManager>().nextLevelScreen.SetActive(false);
         endGameMessage.text = finalMessage;
     }
 }
