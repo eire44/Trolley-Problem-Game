@@ -36,22 +36,11 @@ public class GameManager : MonoBehaviour
         Station_Controller[] stations = FindObjectsOfType<Station_Controller>();
         int index = Random.Range(0, stations.Length);
         stations[index].isGoal = true;
-        //destinationName = stations[index].stationName;
 
-        //stationName.text = "Next Station is: " + destinationName;
 
-        //Messages_Controller messages_Controller = FindObjectOfType<Messages_Controller>();
-
-        //if (messages_Controller.checkForStartMessage(levelNumber) != "")
-        //{
-        //    stations[index].levelStartMessage = messages_Controller.checkForStartMessage(levelNumber);
-        //}
-
-        //if(stations[index].GetComponent<stations_EndMessage>() != null)
-        //{
-        //    messages_Controller.endGameMessage = stations[index].GetComponent<stations_EndMessage>().endGameMessage;
-        //}
-        
+        collectGems carrito = FindObjectOfType<collectGems>();
+        carrito.monedas.text = "Monedas: " + collectGems.coinsAmount;
+        carrito.minerales.text = "Minerales recolectados: " + collectGems.mineralesAmount;
 
         FindObjectOfType<Level_StartScreen>().setLevelScreen(levelNumber, stations[index].levelStartMessage);
 

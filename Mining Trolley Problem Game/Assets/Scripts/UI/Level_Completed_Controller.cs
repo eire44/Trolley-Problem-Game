@@ -16,6 +16,8 @@ public class Level_Completed_Controller : MonoBehaviour
     public Button btnNextLevel;
 
     public List<GameObject> uiScreens = new List<GameObject>();
+
+    public AudioSource purchaseAudio;
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
@@ -79,12 +81,24 @@ public class Level_Completed_Controller : MonoBehaviour
         ///audioSource_Click.Play();
         if (checkIfNextLevel())
         {
-            SceneManager.LoadScene(currentScene.buildIndex + 1);
+            collectGems.coinsAmount -= gameManager.condicionNivel;
+            //purchaseAudio.Play();
+            StartCoroutine(CambiarNivel());
+            //SceneManager.LoadScene(currentScene.buildIndex + 1);
         }
         else
         {
             FindObjectOfType<endGame>().showEndGameScreen("a revisar");
         }
+    }
+
+    private IEnumerator CambiarNivel()
+    {
+        purchaseAudio.Play();
+
+        yield return new WaitForSecondsRealtime(purchaseAudio.clip.length);
+
+        SceneManager.LoadScene(currentScene.buildIndex + 1);
     }
 
     public bool checkIfNextLevel()
