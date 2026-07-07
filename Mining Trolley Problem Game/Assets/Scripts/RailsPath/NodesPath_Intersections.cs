@@ -68,7 +68,7 @@ public class NodesPath_Intersections : NodesPath
         if (collision.gameObject.CompareTag("Player"))
         {
             //changeTrack = false;
-            gameManager.addToSavedCount(amountSaved);
+            //gameManager.addToSavedCount(amountSaved);
             //selectNextIntersection();
 
             //SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();

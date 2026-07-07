@@ -249,8 +249,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 238629329, guid: 88f8a990932c635498a43835e6545b46, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 0d45a25e2950c974eb2d339608bc7799, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -270,8 +270,8 @@ Transform:
   m_GameObject: {fileID: 63434372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.906, y: -3.65, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.99, y: -3.395, z: 0}
+  m_LocalScale: {x: 0.7338278, y: 0.7338278, z: 0.7338278}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2447,7 +2447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: Creditos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631bbfe483830bb43aa27712ab2f4993, type: 2}
   m_sharedMaterial: {fileID: -5882906234978926893, guid: 631bbfe483830bb43aa27712ab2f4993, type: 2}
@@ -2665,25 +2665,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Developer:
+  m_text: 'Desarrolladora:
 
     Eire Hansen
 
 
-    Visual Assets (Available on Itch.io):
+    Assets visuales (Disponibles en
+    Itch.io):
 
-    Tiny
-    Trains - Kaawan
+    Tiny Trains - Kaawan
 
-    Simple 2D Train by Turbo Developement Team - Turbo Developement
-    Team
+    Simple 2D Train by Turbo Developement
+    Team - Turbo Developement Team
 
     Sprout Lands UI Pack - Cup Nooble
 
-    UI Buttons - Kicked-in-Teeth
+    UI
+    Buttons - Kicked-in-Teeth
 
-    Grass+
-    - SciGho'
+    Grass+ - SciGho'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
   m_sharedMaterial: {fileID: -8620562973176905024, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: "Cr\xE9ditos"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
   m_sharedMaterial: {fileID: -8620562973176905024, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
@@ -3404,7 +3404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Comenzar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
   m_sharedMaterial: {fileID: -8620562973176905024, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
@@ -4123,7 +4123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
   m_sharedMaterial: {fileID: -8620562973176905024, guid: 8f2e4008a5394c74fbe4ece064307848, type: 2}
@@ -4257,9 +4257,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Trolley Problem
+  m_text: 'el eterno
 
-    Game'
+    minero'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 631bbfe483830bb43aa27712ab2f4993, type: 2}
   m_sharedMaterial: {fileID: -5882906234978926893, guid: 631bbfe483830bb43aa27712ab2f4993, type: 2}

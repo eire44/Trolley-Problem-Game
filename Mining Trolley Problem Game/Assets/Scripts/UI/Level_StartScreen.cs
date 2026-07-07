@@ -35,10 +35,10 @@ public class Level_StartScreen : MonoBehaviour
     //    startMessage.text = msgController.finalMessage;
     //}
 
-    public void setLevelScreen(int levelIndex, string stationName, string message)
+    public void setLevelScreen(int levelIndex, string message)
     {
-        levelNumber.text = "Level " + levelIndex.ToString();
-        destination.text = "Destination: " + stationName;
+        levelNumber.text = "Nivel " + levelIndex.ToString();
+        //destination.text = "Destination: " + stationName;
         startMessage.text = message;
     }
 

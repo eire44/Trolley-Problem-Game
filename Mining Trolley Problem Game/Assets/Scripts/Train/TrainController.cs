@@ -39,11 +39,11 @@ public class TrainController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Victim"))
         {
-            gameManager.addToVictimsCount(false);
+            //gameManager.addToVictimsCount(false);
             collision.gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("Double Victim"))
         {
-            gameManager.addToVictimsCount(true);
+            //gameManager.addToVictimsCount(true);
             collision.gameObject.SetActive(false);
         }
         else if (collision.gameObject.CompareTag("Obstacle"))

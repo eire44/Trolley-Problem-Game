@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Victims_Controller : MonoBehaviour
 {
-    Messages_Controller msgController;
-    public string victimsMessage = "";
+    //Messages_Controller msgController;
+    //public string victimsMessage = "";
 
-    private void Start()
-    {
-        msgController = FindObjectOfType<Messages_Controller>();
-    }
+    //private void Start()
+    //{
+    //    msgController = FindObjectOfType<Messages_Controller>();
+    //}
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if(victimsMessage != "")
-            {
-                msgController.finalMessage = victimsMessage;
-            }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        if(victimsMessage != "")
+    //        {
+    //            msgController.finalMessage = victimsMessage;
+    //        }
             
-        }
-    }
+    //    }
+    //}
 }

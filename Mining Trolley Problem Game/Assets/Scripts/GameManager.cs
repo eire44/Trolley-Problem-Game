@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public TMP_Text stationName;
-    public TMP_Text victimsCount;
-    public TMP_Text savedCount;
-    [HideInInspector] public int amountOfVictims = 0;
-    int amountSaved = 0;
-    [HideInInspector] public string destinationName = "";
+    //public TMP_Text stationName;
+    //public TMP_Text victimsCount;
+    ////public TMP_Text savedCount;
+    //[HideInInspector] public int amountOfVictims = 0;
+    //int amountSaved = 0;
+    //[HideInInspector] public string destinationName = "";
 
     public GameObject nextLevelScreen;
     public Button btnNextLevel;
@@ -32,24 +32,24 @@ public class GameManager : MonoBehaviour
         Station_Controller[] stations = FindObjectsOfType<Station_Controller>();
         int index = Random.Range(0, stations.Length);
         stations[index].isGoal = true;
-        destinationName = stations[index].stationName;
+        //destinationName = stations[index].stationName;
 
-        stationName.text = "Next Station is: " + destinationName;
+        //stationName.text = "Next Station is: " + destinationName;
 
-        Messages_Controller messages_Controller = FindObjectOfType<Messages_Controller>();
+        //Messages_Controller messages_Controller = FindObjectOfType<Messages_Controller>();
 
-        if (messages_Controller.checkForStartMessage(levelNumber) != "")
-        {
-            stations[index].levelStartMessage = messages_Controller.checkForStartMessage(levelNumber);
-        }
+        //if (messages_Controller.checkForStartMessage(levelNumber) != "")
+        //{
+        //    stations[index].levelStartMessage = messages_Controller.checkForStartMessage(levelNumber);
+        //}
 
-        if(stations[index].GetComponent<stations_EndMessage>() != null)
-        {
-            messages_Controller.endGameMessage = stations[index].GetComponent<stations_EndMessage>().endGameMessage;
-        }
+        //if(stations[index].GetComponent<stations_EndMessage>() != null)
+        //{
+        //    messages_Controller.endGameMessage = stations[index].GetComponent<stations_EndMessage>().endGameMessage;
+        //}
         
 
-        FindObjectOfType<Level_StartScreen>().setLevelScreen(levelNumber, destinationName, stations[index].levelStartMessage);
+        FindObjectOfType<Level_StartScreen>().setLevelScreen(levelNumber, stations[index].levelStartMessage);
 
         crashMessage.Add("Try not to crash, okay? Make it to the right station, the train won´t stop at the wrong one.");
         crashMessage.Add("I told you not to crash. Make sure you´re heading to the right station and through the right tracks.");
@@ -58,25 +58,25 @@ public class GameManager : MonoBehaviour
         crashMessage.Add("Stop. Crashing. Get. To the right. Station.");
     }
 
-    public void addToVictimsCount(bool doubleVictim)
-    {
-        if(doubleVictim)
-        {
-            amountOfVictims += 2;
-        }
-        else
-        {
-            amountOfVictims++;
-        }
+    //public void addToVictimsCount(bool doubleVictim)
+    //{
+    //    if(doubleVictim)
+    //    {
+    //        amountOfVictims += 2;
+    //    }
+    //    else
+    //    {
+    //        amountOfVictims++;
+    //    }
         
-        victimsCount.text = "Killed: " + amountOfVictims.ToString();
-    }
+    //    victimsCount.text = "Killed: " + amountOfVictims.ToString();
+    //}
 
-    public void addToSavedCount(int amountToSave)
-    {
-        amountSaved += amountToSave;
-        savedCount.text = "Saved: " + amountSaved.ToString();
-    }
+    //public void addToSavedCount(int amountToSave)
+    //{
+    //    amountSaved += amountToSave;
+    //    savedCount.text = "Saved: " + amountSaved.ToString();
+    //}
 
     public void openNextLevelScreen(bool trainCrashed, string title)
     {
@@ -85,14 +85,14 @@ public class GameManager : MonoBehaviour
         if (trainCrashed) // || !lvlC.checkIfNextLevel()
         {
             btnNextLevel.interactable = false;
-            amountOfVictims += FindObjectOfType<TrainController>().trainPassengers;
+            //amountOfVictims += FindObjectOfType<TrainController>().trainPassengers;
         } 
         else
         {
             btnNextLevel.interactable = true;
         }
 
-        lvlC.sumAmounts(amountOfVictims, amountSaved);
+        //lvlC.sumAmounts(amountOfVictims, amountSaved);
         finalScreenTitle.text = title;
 
 

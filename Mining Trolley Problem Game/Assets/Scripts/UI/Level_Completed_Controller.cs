@@ -38,8 +38,8 @@ public class Level_Completed_Controller : MonoBehaviour
 
     public void setFinalMessage()
     {
-        finalMessage.text = messages_Controller.finalMessage;
-        messages_Controller.checkForFinalMessage();
+        //finalMessage.text = messages_Controller.finalMessage;
+        //messages_Controller.checkForFinalMessage();
     }
 
     public void sumAmounts(int victims, int saved)
@@ -69,19 +69,19 @@ public class Level_Completed_Controller : MonoBehaviour
         ///audioSource_Click.Play();
         if (checkIfNextLevel())
         {
-            if(totalVictims < 50)
-            {
-                SceneManager.LoadScene(currentScene.buildIndex + 1);
-            }
-            else
-            {
-                messages_Controller.endGameMessage = "You killed 50 people already, people are starting to suspect you’re doing this on purpose. I´ll look for another driver.";
-                FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
-            }
+            //if(totalVictims < 50)
+            //{
+            //    SceneManager.LoadScene(currentScene.buildIndex + 1);
+            //}
+            //else
+            //{
+            //    messages_Controller.endGameMessage = "You killed 50 people already, people are starting to suspect you’re doing this on purpose. I´ll look for another driver.";
+            //    FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
+            //}
         }
         else
         {
-            FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
+            //FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
         }
     }
 
