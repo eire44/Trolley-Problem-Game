@@ -10,6 +10,7 @@ public class mineralsManager : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite nuevoSprite;
     public TMP_Text mineralObtenido;
+    public int equivalenteEnMonedas;
 
     private void Start()
     {

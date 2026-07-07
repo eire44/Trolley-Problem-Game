@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     List<string> crashMessage = new List<string>();
     static int crashIndex = 0;
+
+    public int condicionNivel = 0;
+    [HideInInspector] public List<string> mineralesRecolectados = new List<string>();
+    [HideInInspector] public int monedasRecolectadas = 0;
     void Start()
     {
         Time.timeScale = 0f;
@@ -98,7 +102,7 @@ public class GameManager : MonoBehaviour
 
         if (trainCrashed)
         {
-            lvlC.finalMessage.text = crashMessage[crashIndex];
+            //lvlC.finalMessage.text = crashMessage[crashIndex];
             if(crashMessage[crashIndex + 1] != null)
             {
                 crashIndex++;

@@ -8,8 +8,10 @@ public class collectGems : MonoBehaviour
     GameManager gameManager;
     public TMP_Text monedas;
     public TMP_Text minerales;
+    public AudioSource mineralPickUp;
 
     [HideInInspector] public static int mineralesAmount = 0;
+    [HideInInspector] public static int coinsAmount = 0;
 
     void Start()
     {
@@ -23,6 +25,10 @@ public class collectGems : MonoBehaviour
         {
             mineralesAmount += mM.mineralAmount;
             minerales.text = "Minerales recolectados: " + mineralesAmount;
+            mineralPickUp.Play();
+            gameManager.mineralesRecolectados.Add(mM.mineralName + ": " + mM.mineralAmount);
+            gameManager.monedasRecolectadas += mM.equivalenteEnMonedas;
+            coinsAmount += mM.equivalenteEnMonedas;
         }
     }
 }

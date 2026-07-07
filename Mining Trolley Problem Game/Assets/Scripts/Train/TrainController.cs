@@ -12,7 +12,7 @@ public class TrainController : MonoBehaviour
     GameManager gameManager;
 
     [HideInInspector] public int trainPassengers = 0;
-    public TMP_Text passengersAmount;
+    //public TMP_Text passengersAmount;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class TrainController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
 
         trainPassengers = Random.Range(3, 10);
-        passengersAmount.text = "Passengers amount: " + trainPassengers;
+        //passengersAmount.text = "Passengers amount: " + trainPassengers;
     }
 
     void Update()

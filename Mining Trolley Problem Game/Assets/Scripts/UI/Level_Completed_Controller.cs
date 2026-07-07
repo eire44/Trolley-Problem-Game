@@ -3,28 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class Level_Completed_Controller : MonoBehaviour
 {
     Scene currentScene;
-    static int totalVictims = 0;
-    static int totalSaved = 0;
-
-    public TMP_Text txtVictims;
-    public TMP_Text txtSaved;
-    public TMP_Text finalMessage;
-
+    public TMP_Text condicionDeNivel;
+    public TMP_Text listaObtenidos;
     public GameObject pauseMenu;
-    Messages_Controller messages_Controller;
-    //SaveSystem saveSystem;
+    GameManager gameManager;
+    public TMP_Text txtMonedasTotales;
+    public Button btnNextLevel;
 
-    //static bool firstRound = true;
-    // Start is called before the first frame update
+    public List<GameObject> uiScreens = new List<GameObject>();
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
-        messages_Controller = FindObjectOfType<Messages_Controller>();
-        //saveSystem = FindObjectOfType<SaveSystem>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -38,17 +33,32 @@ public class Level_Completed_Controller : MonoBehaviour
 
     public void setFinalMessage()
     {
+        txtMonedasTotales.text = "Total: " + gameManager.monedasRecolectadas.ToString();
+        condicionDeNivel.text = "Necesitas " + gameManager.condicionNivel + " monedas para comprar el acceso al siguiente nivel";
+        for (int i = 0; i < gameManager.mineralesRecolectados.Count; i++)
+        {
+            listaObtenidos.text += gameManager.mineralesRecolectados[i] + "\n";
+        }
+
+        if(gameManager.monedasRecolectadas >= gameManager.condicionNivel)
+        {
+            btnNextLevel.interactable = true;
+        } else
+        {
+            btnNextLevel.interactable = false;
+        }
+
         //finalMessage.text = messages_Controller.finalMessage;
         //messages_Controller.checkForFinalMessage();
     }
 
     public void sumAmounts(int victims, int saved)
     {
-        totalVictims += victims;
-        totalSaved += saved;
+        //totalVictims += victims;
+        //totalSaved += saved;
 
-        txtVictims.text = "Total Victims: " + totalVictims;
-        txtSaved.text = "Total Saved: " + totalSaved;
+        //txtVictims.text = "Total Victims: " + totalVictims;
+        //txtSaved.text = "Total Saved: " + totalSaved;
     }
 
     public void backToMainMenu()
@@ -69,19 +79,11 @@ public class Level_Completed_Controller : MonoBehaviour
         ///audioSource_Click.Play();
         if (checkIfNextLevel())
         {
-            //if(totalVictims < 50)
-            //{
-            //    SceneManager.LoadScene(currentScene.buildIndex + 1);
-            //}
-            //else
-            //{
-            //    messages_Controller.endGameMessage = "You killed 50 people already, people are starting to suspect you’re doing this on purpose. I´ll look for another driver.";
-            //    FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
-            //}
+            SceneManager.LoadScene(currentScene.buildIndex + 1);
         }
         else
         {
-            //FindObjectOfType<endGame>().showEndGameScreen(messages_Controller.endGameMessage);
+            FindObjectOfType<endGame>().showEndGameScreen("a revisar");
         }
     }
 
@@ -102,15 +104,27 @@ public class Level_Completed_Controller : MonoBehaviour
 
     public void pauseMenuController ()
     {
-        if(pauseMenu.activeInHierarchy)
+        bool open = true;
+        foreach (GameObject screen in uiScreens)
         {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
+            if(screen.activeInHierarchy)
+            {
+                open = false;
+            }
         }
-        else
+
+        if (open)
         {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
+            if (pauseMenu.activeInHierarchy)
+            {
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
     }
 }
