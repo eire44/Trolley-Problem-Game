@@ -15,7 +15,11 @@ public class mineralsManager : MonoBehaviour
 
     private void Start()
     {
-        spriteRenderer.sprite = nuevoSprite;
+        if(spriteRenderer.sprite != null)
+        {
+            spriteRenderer.sprite = nuevoSprite;
+        }
+        
         mineralObtenido.text = "+" + mineralAmount;
     }
 }
