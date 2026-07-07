@@ -9,7 +9,7 @@ public class Station_Controller : MonoBehaviour
     public string stationName = "";
     public string levelStartMessage = "";
     public mineralsManager minaRequerida;
-    public int precioMultiplicar;
+    public float precioMultiplicar;
     public TMP_Text txtNuevoPrecio;
 
     private void Start()

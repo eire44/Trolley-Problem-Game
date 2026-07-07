@@ -38,7 +38,7 @@ public class Level_Completed_Controller : MonoBehaviour
         if (station.minaRequerida != null)
         {
             gameManager.monedasRecolectadas -= station.minaRequerida.mineralAmount;
-            gameManager.monedasRecolectadas += (station.minaRequerida.mineralAmount * station.precioMultiplicar);
+            gameManager.monedasRecolectadas += (int)(station.minaRequerida.mineralAmount * station.precioMultiplicar);
         }
 
         txtMonedasTotales.text = "Total: " + gameManager.monedasRecolectadas.ToString();

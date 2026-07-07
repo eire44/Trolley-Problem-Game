@@ -2453,7 +2453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8314513077125994564, guid: 14a018ba8576acf44bc7af9282c2642f, type: 3}
       propertyPath: equivalenteEnMonedas
-      value: 27
+      value: 31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
