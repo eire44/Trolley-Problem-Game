@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     //    savedCount.text = "Saved: " + amountSaved.ToString();
     //}
 
-    public void openNextLevelScreen(bool trainCrashed, string title)
+    public void openNextLevelScreen(bool trainCrashed, string title, Station_Controller station)
     {
         Level_Completed_Controller lvlC = FindObjectOfType<Level_Completed_Controller>();
 
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
             
         } else
         {
-            lvlC.setFinalMessage();
+            lvlC.setFinalMessage(station);
         }
 
         nextLevelScreen.SetActive(true);

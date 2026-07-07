@@ -29,6 +29,7 @@ public class collectGems : MonoBehaviour
             gameManager.mineralesRecolectados.Add(mM.mineralName + ": " + mM.mineralAmount);
             gameManager.monedasRecolectadas += mM.equivalenteEnMonedas;
             coinsAmount += mM.equivalenteEnMonedas;
+            mM.minedMine = true;
         }
     }
 }

@@ -48,22 +48,23 @@ public class TrainController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            gameManager.openNextLevelScreen(true, "You crashed");
+            //gameManager.openNextLevelScreen(true, "You crashed");
         }
         else if (collision.gameObject.CompareTag("Station"))
         {
             Station_Controller station = collision.gameObject.GetComponent<Station_Controller>();
             if (station != null) //station.name == gameManager.destinyName
             {
-                if(station.isGoal)
-                {
-                    gameManager.openNextLevelScreen(false, "Level Completed");
-                }
-                else
-                {
-                    gameManager.openNextLevelScreen(true, "Wrong station!!");
-                }
-                
+                gameManager.openNextLevelScreen(false, "Level Completed", station);
+                //if(station.isGoal)
+                //{
+                //    
+                //}
+                //else
+                //{
+                //    gameManager.openNextLevelScreen(true, "Wrong station!!");
+                //}
+
             }
         }
     }

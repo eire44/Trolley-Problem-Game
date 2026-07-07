@@ -33,16 +33,23 @@ public class Level_Completed_Controller : MonoBehaviour
         }
     }
 
-    public void setFinalMessage()
+    public void setFinalMessage(Station_Controller station)
     {
+        if (station.minaRequerida != null)
+        {
+            gameManager.monedasRecolectadas -= station.minaRequerida.mineralAmount;
+            gameManager.monedasRecolectadas += (station.minaRequerida.mineralAmount * station.precioMultiplicar);
+        }
+
         txtMonedasTotales.text = "Total: " + gameManager.monedasRecolectadas.ToString();
         condicionDeNivel.text = "Necesitas " + gameManager.condicionNivel + " monedas para comprar el acceso al siguiente nivel";
+
         for (int i = 0; i < gameManager.mineralesRecolectados.Count; i++)
         {
             listaObtenidos.text += gameManager.mineralesRecolectados[i] + "\n";
         }
 
-        if(gameManager.monedasRecolectadas >= gameManager.condicionNivel)
+        if (gameManager.monedasRecolectadas >= gameManager.condicionNivel)
         {
             btnNextLevel.interactable = true;
         } else

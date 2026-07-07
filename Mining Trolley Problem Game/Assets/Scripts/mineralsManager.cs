@@ -11,6 +11,7 @@ public class mineralsManager : MonoBehaviour
     public Sprite nuevoSprite;
     public TMP_Text mineralObtenido;
     public int equivalenteEnMonedas;
+    public bool minedMine = false;
 
     private void Start()
     {
