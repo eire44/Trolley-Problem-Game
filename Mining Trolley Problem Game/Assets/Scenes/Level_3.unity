@@ -503,6 +503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 4767884924996160328, guid: dd5cf2a2b57d8fe49a2070a28207a412, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2962,6 +2966,21 @@ PrefabInstance:
     - target: {fileID: 6641188796086488996, guid: a0478edb55a77e54aa4aa6f3945f4590, type: 3}
       propertyPath: m_Name
       value: Stats
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641188796086488996, guid: a0478edb55a77e54aa4aa6f3945f4590, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311170325596494433, guid: a0478edb55a77e54aa4aa6f3945f4590, type: 3}
+      propertyPath: m_text
+      value: "- 81% de los jugadores eligen la mina de fluorita sobre la de jade.\n-
+        63% de los jugadores eligen la empresa minera que paga extra por los rub\xEDes.\n-
+        56% de los jugadores eligen la mina de rub\xED por sobre la de cuarzo.\n-
+        93% de los jugadores eligen la mina de celestina por sobre la mina vac\xEDa."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311170325596494433, guid: a0478edb55a77e54aa4aa6f3945f4590, type: 3}
+      propertyPath: m_lineSpacing
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9159051045242837053, guid: a0478edb55a77e54aa4aa6f3945f4590, type: 3}
       propertyPath: m_Pivot.x
@@ -5639,6 +5658,10 @@ PrefabInstance:
     - target: {fileID: 4780935116356216750, guid: eae17fc7ad3eab744a7deb6f9691a570, type: 3}
       propertyPath: m_Name
       value: EndLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325540072455209849, guid: eae17fc7ad3eab744a7deb6f9691a570, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 301
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
