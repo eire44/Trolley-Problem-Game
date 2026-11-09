@@ -7,18 +7,32 @@ using ClosedXML.Excel;
 public class RecopilarData : MonoBehaviour
 {
     private string filePath;
+    string idJugador;
+    int contadorDecisiones = 0;
+    static RecopilarData instancia;
 
     void Awake()
     {
+        if (instancia != null && instancia != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instancia = this;
+
+        DontDestroyOnLoad(gameObject);
+
         filePath = Path.Combine(
             Application.persistentDataPath,
             "MetricasJugadores.xlsx"
         );
+
     }
 
     public string RegistrarJugador(string generoFavorito)
     {
-        string idJugador = "J" +
+        string id = "J" +
             Guid.NewGuid().ToString("N").Substring(0, 8);
 
         using (var workbook = AbrirWorkbook())
@@ -28,21 +42,22 @@ public class RecopilarData : MonoBehaviour
 
             int fila = (hoja.LastRowUsed()?.RowNumber() ?? 1) + 1;
 
-            hoja.Cell(fila, 1).Value = idJugador;
+            hoja.Cell(fila, 1).Value = id;
             hoja.Cell(fila, 2).Value = generoFavorito;
 
             workbook.SaveAs(filePath);
         }
 
+        idJugador = id;
+
         return idJugador;
     }
 
-    public void RegistrarDecision(
-        string idJugador,
-        string idDecision,
-        double latenciaSegundos,
-        string alternativaElegida)
+    public void RegistrarDecision(double latenciaSegundos, bool riesgoElegido)
     {
+        contadorDecisiones++;
+        string idDecision = "D" + contadorDecisiones.ToString("D2");
+
         using (var workbook = AbrirWorkbook())
         {
             var hoja = ObtenerHoja(workbook, "Decisiones",
@@ -50,7 +65,7 @@ public class RecopilarData : MonoBehaviour
                     "ID_Jugador",
                     "ID_Decision",
                     "Latencia_ms",
-                    "Alternativa"
+                    "Riesgo"
                 });
 
             int fila = (hoja.LastRowUsed()?.RowNumber() ?? 1) + 1;
@@ -58,7 +73,7 @@ public class RecopilarData : MonoBehaviour
             hoja.Cell(fila, 1).Value = idJugador;
             hoja.Cell(fila, 2).Value = idDecision;
             hoja.Cell(fila, 3).Value = latenciaSegundos * 1000.0;
-            hoja.Cell(fila, 4).Value = alternativaElegida;
+            hoja.Cell(fila, 4).Value = riesgoElegido;
 
             workbook.SaveAs(filePath);
         }
@@ -72,10 +87,7 @@ public class RecopilarData : MonoBehaviour
         return new XLWorkbook();
     }
 
-    private IXLWorksheet ObtenerHoja(
-        XLWorkbook workbook,
-        string nombre,
-        string[] encabezados)
+    private IXLWorksheet ObtenerHoja(XLWorkbook workbook, string nombre, string[] encabezados)
     {
         var hoja = workbook.Worksheets
             .FirstOrDefault(x => x.Name == nombre);

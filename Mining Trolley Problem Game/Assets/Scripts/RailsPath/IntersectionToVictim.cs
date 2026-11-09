@@ -10,4 +10,5 @@ public class IntersectionToVictim
     public NodesPath nextNode;
     public Transform trailOption;
     public int trackVictims;
+    public bool riesgo = false;
 }

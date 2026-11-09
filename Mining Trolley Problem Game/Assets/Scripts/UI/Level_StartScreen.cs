@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class Level_StartScreen : MonoBehaviour
 {
     public GameObject levelStartScreen;
+    public GameObject seleccionGeneroScreen;
+    public TMP_Dropdown generoDropdown;
     public TMP_Text levelNumber;
     public TMP_Text destination;
     public Button btnPreviousLevel;
@@ -15,6 +17,8 @@ public class Level_StartScreen : MonoBehaviour
 
     GameManager gameManager;
     Messages_Controller msgController;
+
+    public RecopilarData recopilarData;
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -24,16 +28,12 @@ public class Level_StartScreen : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void seleccionGeneroLista()
     {
-
+        recopilarData.RegistrarJugador(generoDropdown.options[generoDropdown.value].text);
+        seleccionGeneroScreen.SetActive(false);
+        levelStartScreen.SetActive(true);
     }
-
-    //public void setStartMessage()
-    //{
-    //    startMessage.text = msgController.finalMessage;
-    //}
 
     public void setLevelScreen(int levelIndex, string message)
     {
