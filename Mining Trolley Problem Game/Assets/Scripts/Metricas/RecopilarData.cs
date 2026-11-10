@@ -1,15 +1,30 @@
-using UnityEngine;
+using ClosedXML.Excel;
 using System;
+using System.Collections;
 using System.IO;
 using System.Linq;
-using ClosedXML.Excel;
+using System.Text;
+using UnityEngine;
+using UnityEngine.Networking;
+
+[System.Serializable]
+public class DatosMetricas
+{
+    public string tipo;
+    public string idJugador;
+    public string generoFavorito;
+    public string idDecision;
+    public double latenciaMs;
+    public bool riesgo;
+}
 
 public class RecopilarData : MonoBehaviour
 {
-    private string filePath;
     string idJugador;
     int contadorDecisiones = 0;
     static RecopilarData instancia;
+    private const string URL_GOOGLE_SHEETS =
+    "https://script.google.com/macros/s/AKfycbwLaj1WvS-jF79xnw7y-Cy-7PmVKvF6TDSKD5FOAdXDSLthaKH75peFHL7ZbYfIumzj/exec";
 
     void Awake()
     {
@@ -23,11 +38,6 @@ public class RecopilarData : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        filePath = Path.Combine(
-            Application.persistentDataPath,
-            "MetricasJugadores.xlsx"
-        );
-
     }
 
     public string RegistrarJugador(string generoFavorito)
@@ -35,20 +45,14 @@ public class RecopilarData : MonoBehaviour
         string id = "J" +
             Guid.NewGuid().ToString("N").Substring(0, 8);
 
-        using (var workbook = AbrirWorkbook())
+        DatosMetricas datos = new DatosMetricas
         {
-            var hoja = ObtenerHoja(workbook, "Jugadores",
-                new string[] { "ID_Jugador", "Genero_Favorito" });
+            tipo = "jugador",
+            idJugador = idJugador,
+            generoFavorito = generoFavorito
+        };
 
-            int fila = (hoja.LastRowUsed()?.RowNumber() ?? 1) + 1;
-
-            hoja.Cell(fila, 1).Value = id;
-            hoja.Cell(fila, 2).Value = generoFavorito;
-
-            workbook.SaveAs(filePath);
-        }
-
-        idJugador = id;
+        StartCoroutine(EnviarDatos(datos));
 
         return idJugador;
     }
@@ -58,52 +62,70 @@ public class RecopilarData : MonoBehaviour
         contadorDecisiones++;
         string idDecision = "D" + contadorDecisiones.ToString("D2");
 
-        using (var workbook = AbrirWorkbook())
+        DatosMetricas datos = new DatosMetricas
         {
-            var hoja = ObtenerHoja(workbook, "Decisiones",
-                new string[] {
-                    "ID_Jugador",
-                    "ID_Decision",
-                    "Latencia_ms",
-                    "Riesgo"
-                });
+            tipo = "decision",
+            idJugador = idJugador,
+            idDecision = idDecision,
+            latenciaMs = latenciaSegundos * 1000.0,
+            riesgo = riesgoElegido
+        };
 
-            int fila = (hoja.LastRowUsed()?.RowNumber() ?? 1) + 1;
-
-            hoja.Cell(fila, 1).Value = idJugador;
-            hoja.Cell(fila, 2).Value = idDecision;
-            hoja.Cell(fila, 3).Value = latenciaSegundos * 1000.0;
-            hoja.Cell(fila, 4).Value = riesgoElegido;
-
-            workbook.SaveAs(filePath);
-        }
+        StartCoroutine(EnviarDatos(datos));
     }
 
-    private XLWorkbook AbrirWorkbook()
+    //private XLWorkbook AbrirWorkbook()
+    //{
+    //    if (File.Exists(filePath))
+    //        return new XLWorkbook(filePath);
+
+    //    return new XLWorkbook();
+    //}
+
+    //private IXLWorksheet ObtenerHoja(XLWorkbook workbook, string nombre, string[] encabezados)
+    //{
+    //    var hoja = workbook.Worksheets
+    //        .FirstOrDefault(x => x.Name == nombre);
+
+    //    if (hoja == null)
+    //    {
+    //        hoja = workbook.Worksheets.Add(nombre);
+
+    //        for (int i = 0; i < encabezados.Length; i++)
+    //        {
+    //            hoja.Cell(1, i + 1).Value = encabezados[i];
+    //            hoja.Cell(1, i + 1).Style.Font.Bold = true;
+    //        }
+    //    }
+
+    //    return hoja;
+    //}
+
+    public IEnumerator EnviarDatos(DatosMetricas datos)
     {
-        if (File.Exists(filePath))
-            return new XLWorkbook(filePath);
+        string json = JsonUtility.ToJson(datos);
 
-        return new XLWorkbook();
-    }
+        byte[] body = Encoding.UTF8.GetBytes(json);
 
-    private IXLWorksheet ObtenerHoja(XLWorkbook workbook, string nombre, string[] encabezados)
-    {
-        var hoja = workbook.Worksheets
-            .FirstOrDefault(x => x.Name == nombre);
-
-        if (hoja == null)
+        using (UnityWebRequest request =
+            new UnityWebRequest(URL_GOOGLE_SHEETS, "POST"))
         {
-            hoja = workbook.Worksheets.Add(nombre);
+            request.uploadHandler = new UploadHandlerRaw(body);
+            request.downloadHandler = new DownloadHandlerBuffer();
 
-            for (int i = 0; i < encabezados.Length; i++)
+            request.SetRequestHeader("Content-Type", "application/json");
+
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
             {
-                hoja.Cell(1, i + 1).Value = encabezados[i];
-                hoja.Cell(1, i + 1).Style.Font.Bold = true;
+                Debug.Log("Datos enviados: " + request.downloadHandler.text);
+            }
+            else
+            {
+                Debug.LogError("Error al enviar datos: " + request.error);
             }
         }
-
-        return hoja;
     }
 }
 
