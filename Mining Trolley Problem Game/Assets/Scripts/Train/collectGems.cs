@@ -23,10 +23,10 @@ public class collectGems : MonoBehaviour
         mineralsManager mM = collision.gameObject.GetComponent<mineralsManager>();
         if (mM != null)
         {
-            mineralesAmount += mM.mineralAmount;
+            mineralesAmount += mM.CantidadMineralesDef;
             minerales.text = "Minerales recolectados: " + mineralesAmount;
             mineralPickUp.Play();
-            gameManager.mineralesRecolectados.Add(mM.mineralName + ": " + mM.mineralAmount);
+            gameManager.mineralesRecolectados.Add(mM.mineralName + ": " + mM.CantidadMineralesDef);
             gameManager.monedasRecolectadas += mM.equivalenteEnMonedas;
             coinsAmount += mM.equivalenteEnMonedas;
             mM.minedMine = true;

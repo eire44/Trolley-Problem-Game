@@ -12,12 +12,13 @@ public class NodesPath_Intersections : NodesPath
 
     public double empiezaAPensar;
     double latencia;
-    public RecopilarData recopilarData;
+    RecopilarData recopilarData;
     private void Start()
     {
         showSelectedTrail();
 
         gameManager = FindObjectOfType<GameManager>();
+        recopilarData = FindObjectOfType<RecopilarData>();
 
         empiezaAPensar = Time.realtimeSinceStartupAsDouble;
     }

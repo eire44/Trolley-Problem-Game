@@ -1814,7 +1814,6 @@ MonoBehaviour:
   destination: {fileID: 48456189346947155}
   btnPreviousLevel: {fileID: 7481850423043900353}
   startMessage: {fileID: 2487731518813439339}
-  recopilarData: {fileID: 1182008869}
 --- !u!114 &677389358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4767,10 +4766,13 @@ MonoBehaviour:
     nextNode: {fileID: 1159103095}
     trailOption: {fileID: 1100503654}
     trackVictims: 5
+    riesgo: 1
   - trailID: 1
     nextNode: {fileID: 355948238}
     trailOption: {fileID: 247093587}
     trackVictims: 1
+    riesgo: 0
+  empiezaAPensar: 0
 --- !u!1 &1982468570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5842,6 +5844,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mina
       objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesMax
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesMin
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesAleatoria
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7525742094353249825, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.29
@@ -6252,6 +6266,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 677389355}
+    - target: {fileID: 1867902834776440585, guid: eae17fc7ad3eab744a7deb6f9691a570, type: 3}
+      propertyPath: m_text
+      value: 'Recibes: 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 2204138325619071789, guid: eae17fc7ad3eab744a7deb6f9691a570, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

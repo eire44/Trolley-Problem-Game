@@ -885,10 +885,13 @@ MonoBehaviour:
     nextNode: {fileID: 982546670}
     trailOption: {fileID: 2017954510}
     trackVictims: 0
+    riesgo: 1
   - trailID: 1
     nextNode: {fileID: 355948238}
     trailOption: {fileID: 893513666}
     trackVictims: 0
+    riesgo: 0
+  empiezaAPensar: 0
 --- !u!61 &134609108
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2395,8 +2398,20 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8314513077125994564, guid: 14a018ba8576acf44bc7af9282c2642f, type: 3}
+      propertyPath: cantMineralesMax
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314513077125994564, guid: 14a018ba8576acf44bc7af9282c2642f, type: 3}
+      propertyPath: cantMineralesMin
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314513077125994564, guid: 14a018ba8576acf44bc7af9282c2642f, type: 3}
       propertyPath: equivalenteEnMonedas
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314513077125994564, guid: 14a018ba8576acf44bc7af9282c2642f, type: 3}
+      propertyPath: cantMineralesAleatoria
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2650,7 +2665,6 @@ MonoBehaviour:
   destination: {fileID: 47428300}
   btnPreviousLevel: {fileID: 47428301}
   startMessage: {fileID: 47428299}
-  recopilarData: {fileID: 0}
 --- !u!114 &677389358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3238,8 +3252,16 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesMax
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
       propertyPath: equivalenteEnMonedas
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesAleatoria
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525742094353249825, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3495,10 +3517,13 @@ MonoBehaviour:
     nextNode: {fileID: 467607270}
     trailOption: {fileID: 1387019883}
     trackVictims: 0
+    riesgo: 0
   - trailID: 1
     nextNode: {fileID: 331073903}
     trailOption: {fileID: 625043015}
     trackVictims: 2
+    riesgo: 0
+  empiezaAPensar: 0
 --- !u!61 &982546671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3822,10 +3847,13 @@ MonoBehaviour:
     nextNode: {fileID: 26656950}
     trailOption: {fileID: 151076361}
     trackVictims: 1
+    riesgo: 1
   - trailID: 1
     nextNode: {fileID: 754186107}
     trailOption: {fileID: 746875209}
     trackVictims: 3
+    riesgo: 0
+  empiezaAPensar: 0
 --- !u!61 &1068851680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4515,8 +4543,20 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesMax
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesMin
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
       propertyPath: equivalenteEnMonedas
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700487044206304454, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
+      propertyPath: cantMineralesAleatoria
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525742094353249825, guid: cf962c2b3c09dc14db949d49d784f9e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6507,10 +6547,13 @@ MonoBehaviour:
     nextNode: {fileID: 134609107}
     trailOption: {fileID: 1100503654}
     trackVictims: 3
+    riesgo: 1
   - trailID: 1
     nextNode: {fileID: 1159103095}
     trailOption: {fileID: 247093587}
     trackVictims: 2
+    riesgo: 0
+  empiezaAPensar: 0
 --- !u!1 &1997669626
 GameObject:
   m_ObjectHideFlags: 0

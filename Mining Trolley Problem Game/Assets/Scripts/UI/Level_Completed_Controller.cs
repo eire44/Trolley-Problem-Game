@@ -37,11 +37,11 @@ public class Level_Completed_Controller : MonoBehaviour
     {
         if (station.minaRequerida != null)
         {
-            gameManager.monedasRecolectadas -= station.minaRequerida.mineralAmount;
-            gameManager.monedasRecolectadas += (int)(station.minaRequerida.mineralAmount * station.precioMultiplicar);
+            gameManager.monedasRecolectadas -= station.minaRequerida.CantidadMineralesDef;
+            gameManager.monedasRecolectadas += (int)(station.minaRequerida.CantidadMineralesDef * station.precioMultiplicar);
         }
 
-        txtMonedasTotales.text = "Total: " + gameManager.monedasRecolectadas.ToString();
+        txtMonedasTotales.text = "Recibes: " + gameManager.monedasRecolectadas.ToString();
         condicionDeNivel.text = "Necesitas " + gameManager.condicionNivel + " monedas para comprar el acceso al siguiente nivel";
 
         for (int i = 0; i < gameManager.mineralesRecolectados.Count; i++)

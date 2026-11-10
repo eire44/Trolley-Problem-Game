@@ -18,11 +18,12 @@ public class Level_StartScreen : MonoBehaviour
     GameManager gameManager;
     Messages_Controller msgController;
 
-    public RecopilarData recopilarData;
+    RecopilarData recopilarData;
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         msgController = FindObjectOfType<Messages_Controller>();
+        recopilarData = FindObjectOfType<RecopilarData>();
 
         btnPreviousLevel.interactable = gameManager.levelNumber > 1;
         

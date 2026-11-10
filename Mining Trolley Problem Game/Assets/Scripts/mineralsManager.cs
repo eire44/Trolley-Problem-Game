@@ -12,6 +12,12 @@ public class mineralsManager : MonoBehaviour
     public TMP_Text mineralObtenido;
     public int equivalenteEnMonedas;
     public bool minedMine = false;
+    public bool cantMineralesAleatoria = false;
+
+    public int cantMineralesMin = 0;
+    public int cantMineralesMax = 0;
+
+    [HideInInspector] public int CantidadMineralesDef;
 
     private void Start()
     {
@@ -19,7 +25,18 @@ public class mineralsManager : MonoBehaviour
         {
             spriteRenderer.sprite = nuevoSprite;
         }
-        
-        mineralObtenido.text = "+" + mineralAmount;
+
+        if (cantMineralesAleatoria)
+        {
+            CantidadMineralesDef = Random.Range(cantMineralesMin, cantMineralesMax);
+            mineralObtenido.text = "+ (" + cantMineralesMin + ", " + (cantMineralesMax - 1) + ")";
+        }
+        else
+        {
+            CantidadMineralesDef = mineralAmount;
+            mineralObtenido.text = "+" + mineralAmount;
+        }
+
+
     }
 }
