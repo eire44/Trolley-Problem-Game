@@ -20,7 +20,7 @@ public class NodesPath_Intersections : NodesPath
         gameManager = FindObjectOfType<GameManager>();
         recopilarData = FindObjectOfType<RecopilarData>();
 
-        empiezaAPensar = Time.realtimeSinceStartupAsDouble;
+        //empiezaAPensar = Time.realtimeSinceStartupAsDouble;
     }
 
     public override NodesPath GetNextNode()

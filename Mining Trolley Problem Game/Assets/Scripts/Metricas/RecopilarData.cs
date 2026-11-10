@@ -20,7 +20,7 @@ public class DatosMetricas
 
 public class RecopilarData : MonoBehaviour
 {
-    string idJugador;
+    string idJugadorLocal;
     int contadorDecisiones = 0;
     static RecopilarData instancia;
     private const string URL_GOOGLE_SHEETS =
@@ -45,16 +45,18 @@ public class RecopilarData : MonoBehaviour
         string id = "J" +
             Guid.NewGuid().ToString("N").Substring(0, 8);
 
+        idJugadorLocal = id;
+
         DatosMetricas datos = new DatosMetricas
         {
             tipo = "jugador",
-            idJugador = idJugador,
+            idJugador = id,
             generoFavorito = generoFavorito
         };
 
         StartCoroutine(EnviarDatos(datos));
 
-        return idJugador;
+        return idJugadorLocal;
     }
 
     public void RegistrarDecision(double latenciaSegundos, bool riesgoElegido)
@@ -65,7 +67,7 @@ public class RecopilarData : MonoBehaviour
         DatosMetricas datos = new DatosMetricas
         {
             tipo = "decision",
-            idJugador = idJugador,
+            idJugador = idJugadorLocal,
             idDecision = idDecision,
             latenciaMs = latenciaSegundos * 1000.0,
             riesgo = riesgoElegido

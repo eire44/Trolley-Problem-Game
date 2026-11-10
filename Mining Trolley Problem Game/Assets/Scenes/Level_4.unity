@@ -459,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325540072455209849, guid: eae17fc7ad3eab744a7deb6f9691a570, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 301
+      value: 345
       objectReference: {fileID: 0}
     - target: {fileID: 8804489036826751634, guid: eae17fc7ad3eab744a7deb6f9691a570, type: 3}
       propertyPath: m_IsActive
@@ -8029,7 +8029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentNode: {fileID: 1544512313}
-  speed: 1.1
+  speed: 1
   trainPassengers: 0
 --- !u!61 &1589565670
 BoxCollider2D:

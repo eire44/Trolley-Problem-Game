@@ -47,6 +47,11 @@ public class Level_StartScreen : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         levelStartScreen.SetActive(false);
+        
+        foreach (var item in FindObjectsOfType<NodesPath_Intersections>())
+        {
+            item.empiezaAPensar = Time.realtimeSinceStartupAsDouble;
+        }
     }
 
     public void goToPreviousLevel()
